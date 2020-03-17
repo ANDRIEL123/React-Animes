@@ -1,0 +1,5 @@
+08/03/2020
+
+- Implementar o retorno da lista de animes com somente os últimos 25 animes
+- Implementar anterior e posterior na playlist de animes
+- Ajustar o menu para que quando é selecionado um item e após é aberto o menu a página fique atualizando

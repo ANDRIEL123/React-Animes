@@ -1,0 +1,51 @@
+h2 {
+    color: rgb(70, 201, 253);
+}
+
+.list-videos a {
+    text-decoration: none;
+    border: none;
+    margin-bottom: none;
+    border-bottom: none;
+    display: block;
+    background: rgb(32, 32, 32);
+    margin: 8px;
+    padding: none;
+    height: 170px;
+}
+
+
+.list-videos .videos strong {
+    font-size: 14px;
+}
+
+.list-videos .videos {
+    margin-top: 20px;
+}
+
+.list-videos .videos:hover, .list-videos a:hover {
+    background: rgb(71, 71, 71);
+}
+
+.list-videos {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    flex-wrap: wrap;
+    padding: 2px;
+    background-color: rgb(15, 15, 15);
+    width: 80%;
+    
+}
+
+.list-videos .videos{
+    margin-left: 4px;
+    margin-right: 4px;
+    color: rgb(70, 201, 253);
+    margin-top: 10px;
+    width: 125px;
+    height: 150px;
+    display: block;
+    margin: 20px;
+}
+
