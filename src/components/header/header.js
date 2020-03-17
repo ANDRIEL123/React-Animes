@@ -46,7 +46,6 @@ export default class Header extends Component {
                         </div>
                     </Link>
                     <div className="search">
-                        <TextField className="txt-search" label="Pesquisar Animes" fullWidth />
                         <Search className="icon-search" />
                     </div>
                 </div>

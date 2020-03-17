@@ -1,0 +1,132 @@
+@media screen and (min-width: 701px) {
+    .sugerir-animes{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 5%;
+    }
+    .form-pedido {
+        width: 70%;
+        background-color: rgb(255, 255, 255);
+        display: block;
+        box-sizing: border-box;
+        border-radius: 20px;
+    }
+
+    .form-pedido .txt-mensagem {
+        width: 60%;
+    }
+
+    
+    .form-pedido .txt-nome input, .txt-anime input, .txt-email input{
+        width: 500px;
+     }
+
+     .form-pedido .txt-nome, .txt-anime, .btn-envio, .txt-email, .txt-mensagem {
+         margin-top: 20px;
+     }
+
+}
+
+@media screen and (min-width: 551px) and (max-width: 700px) {
+    .sugerir-animes{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 5%;
+    }
+
+    .form-pedido {
+        width: 70%;
+        background-color: rgb(255, 255, 255);
+        display: block;
+        box-sizing: border-box;
+        border-radius: 20px;
+    }
+    
+    .form-pedido .txt-nome input, .txt-anime input, .txt-email input{
+        width: 400px;
+     }
+
+     .form-pedido .txt-nome, .txt-anime, .btn-envio, .txt-email, .txt-mensagem {
+        margin-top: 20px;
+    }
+
+    .form-pedido .txt-mensagem {
+        width: 80%;
+    }
+}
+
+@media screen and (min-width: 451px) and (max-width: 550px) {
+    .sugerir-animes{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 5%;
+    }
+
+.form-pedido {
+    width: 70%;
+    background-color: rgb(255, 255, 255);
+    display: block;
+    box-sizing: border-box;
+    border-radius: 20px;
+}
+
+.form-pedido .txt-nome, .txt-anime, .txt-email {
+    width: 350px;
+    
+ }
+ .form-pedido .txt-nome, .txt-anime, .btn-envio, .txt-email, .txt-mensagem {
+    margin-top: 20px;
+}
+}
+
+
+
+@media screen and (max-width: 450px) and (min-width: 351px) {
+    .sugerir-animes{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 5%;
+    }
+
+    .form-pedido {
+        width: 70%;
+        background-color: rgb(255, 255, 255);
+        display: block;
+        box-sizing: border-box;
+        border-radius: 20px;
+    }
+    .form-pedido .txt-nome input, .txt-anime input, .txt-email input {
+        width: 250px;
+    }
+    .form-pedido .txt-nome, .txt-anime, .btn-envio, .txt-email, .txt-mensagem {
+        margin-top: 20px;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .sugerir-animes{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 5%;
+    }
+
+    .form-pedido {
+        width: 70%;
+        background-color: rgb(255, 255, 255);
+        display: block;
+        box-sizing: border-box;
+        border-radius: 20px;
+    }
+    .form-pedido .txt-nome {
+        width: 200px;
+    }
+    .form-pedido .txt-nome, .txt-anime, .btn-envio, .txt-email, .txt-mensagem {
+        margin-top: 20px;
+    }
+    
+}
