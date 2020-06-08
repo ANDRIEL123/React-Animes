@@ -12,12 +12,14 @@ import Contato from './pages/contato'
 import Sobre from './pages/sobre'
 import Staff from './pages/staff'
 import Sugerir from './pages/sugerir'
+import Anime from './pages/anime'
 
 export default function MainRoutes() {
     return (
         <Routes>
             <Route path="/" element={<RenderMidia />} />
             <Route path="episodio/:id_episodio" element={<Episodio />} />
+            <Route path="anime/:id_anime" element={<Anime />} />
             <Route path="animes" element={<Animes />} />
             <Route path="contato" element={<Contato />} />
             <Route path="sobre" element={<Sobre />} />

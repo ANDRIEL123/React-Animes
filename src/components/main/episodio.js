@@ -158,8 +158,14 @@ export default function Episodio() {
             <div className="anime">
 
                 <div className="class-title">
-                    <h2 >{episodio.titleEpisodio}</h2>
+                    <h2>
+                        <Link to={`/anime/${episodio.idanimes}`}>
+                            {episodio.titleAnime}
+                        </Link>
+                        {` - ${episodio.titleEpisodio}`}
+                    </h2>
                 </div>
+
                 <div className='player-wrapper'>
                     <ReactPlayer
                         // Disable right click
@@ -178,7 +184,7 @@ export default function Episodio() {
                     <Link to={"/episodio/" + after()}>
                         {retornaButtonLeft()}
                     </Link>
-                    <Link to="/animes/">
+                    <Link to={`/anime/${episodio.idanimes}`}>
                         <div className="list">
                             <img src={ListAnimes} />
                         </div>
