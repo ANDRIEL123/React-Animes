@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import './renderVideos.css'
-import Header from '../header/header'
-import Anime from './anime'
+import api from '../../services/api'
 
 import {
     BrowserRouter as Router,
@@ -22,36 +21,19 @@ export default class RenderMidia extends Component {
         this.renderVideos()
 
     }
+    renderVideos = async () => {
+        const response = await api.get('/episodios')
+        console.log(response.data.response)
+        this.setState({ videos: response.data.response })
 
-    filtraVideos = (videos) => {
-        let anime = []
-        for (let index = videos.length - 1; index >= videos.length - 25; index--) {
-            anime.push(videos[index]);
+    }
+
+    baseUrlUploads = (imagemEpisodio, imagemAnime) => {
+        if (imagemEpisodio !== null) {
+            return `${process.env.REACT_APP_API_URL}/uploads/${imagemEpisodio}`
+        } else {
+            return `${process.env.REACT_APP_API_URL}/uploads/${imagemAnime}`
         }
-        return anime
-    }
-
-    renderVideos = () => {
-        //DOCUMENTAÇÃO: https://www.npmjs.com/package/jwplatform
-        //Acessar em node_modelues jwplatform e no arquivo client.js em this.baseUrl alterar para
-        //this.baseUrl = 'https://cors-anywhere.herokuapp.com/https://api.jwplatform.com/v1/';
-        //Assim liberandos as cors
-        const JWPlatformAPI = require('jwplatform');
-
-        const jwApi = new JWPlatformAPI({ apiKey: 'heLimJnV', apiSecret: 'i1u5Qq8aD62PYy2bAemWZ9sy' });
-
-        jwApi.videos.list().then((response) => {
-            console.log(response.videos)
-            const animes = this.filtraVideos(response.videos)
-            console.log(animes)
-            this.setState({ videos: animes })
-
-        })
-
-    }
-
-    baseUrlImg = (key) => {
-        return `https://cdn.jwplayer.com/v2/media/${key}/poster.jpg?width=320`
     }
 
     render() {
@@ -64,10 +46,12 @@ export default class RenderMidia extends Component {
                 <div className="list-videos">
 
                     {videos.map((videos) => (
-                        <Link to={"/anime/" + videos.key} >
+
+                        <Link to={"/episodio/" + videos.idepisodios} >
                             <div className="videos" key={videos._id}>
-                                <img src={this.baseUrlImg(videos.key)} width="125px" height="100px" />
-                                <strong>{videos.title}</strong>
+                                {console.log(videos)}
+                                <img src={this.baseUrlUploads(videos.imgEpisodio, videos.imgAnime)} width="125px" height="100px" />
+                                <strong>{videos.titleEpisodio}</strong>
                             </div>
                         </Link>
                     ))}

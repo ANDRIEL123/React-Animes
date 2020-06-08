@@ -6,7 +6,7 @@ import {
 } from 'react-router-dom';
 
 import RenderMidia from './components/main/renderVideos'
-import Anime from './components/main/anime';
+import Episodio from './components/main/episodio';
 import Animes from './pages/animes'
 import Contato from './pages/contato'
 import Sobre from './pages/sobre'
@@ -17,7 +17,7 @@ export default function MainRoutes() {
     return (
         <Routes>
             <Route path="/" element={<RenderMidia />} />
-            <Route path="anime/:key" element={<Anime />} />
+            <Route path="episodio/:id_episodio" element={<Episodio />} />
             <Route path="animes" element={<Animes />} />
             <Route path="contato" element={<Contato />} />
             <Route path="sobre" element={<Sobre />} />

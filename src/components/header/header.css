@@ -7,6 +7,13 @@ a {
     
 }
 
+.search-anime {
+    display: flex;
+    justify-content: center;
+    background-color: rgb(46, 46, 46);
+    padding: 10px;
+}
+
 .main-header .search .icon-search{
     color: rgb(70, 201, 253);
 }
@@ -26,6 +33,7 @@ a {
     }
     
     .main-header .logo {
+        cursor: pointer;
         display: flex;
         align-items: center;
         color: rgb(70, 201, 253);
@@ -36,9 +44,14 @@ a {
         cursor: pointer;
     }
     .main-header .search {
-        margin-right: 10px;
+        margin-right: 20px;
     }
 
+    .search-anime .input-search {
+        width: 500px;
+        background-color: rgb(182, 182, 182);
+        border-radius: 10px;
+    }
 }
 
 @media screen and (max-width: 699px) and (min-width: 531px) {
@@ -59,6 +72,7 @@ a {
     }
     
     .main-header .logo {
+        cursor: pointer;
         display: flex;
         align-items: center;
         color: rgb(70, 201, 253);
@@ -75,6 +89,12 @@ a {
         align-items: center;
         margin-right: 8vmin;
         
+    }
+
+    .search-anime .input-search {
+        width: 450px;
+        background-color: rgb(182, 182, 182);
+        border-radius: 9px;
     }
 }
 @media screen and (max-width: 530px)  and (min-width: 401px) {
@@ -95,6 +115,7 @@ a {
     }
     
     .main-header .logo {
+        cursor: pointer;
         display: flex;
         align-items: center;
         color: rgb(70, 201, 253);
@@ -112,6 +133,12 @@ a {
         margin-right: 8vmin;
         
     }    
+
+    .search-anime .input-search {
+        width: 350px;
+        background-color: rgb(182, 182, 182);
+        border-radius: 8px;
+    }
 }
 
 @media screen and (max-width: 400px) and (min-width: 301px) {
@@ -125,6 +152,7 @@ a {
 
     
     .main-header .logo {
+        cursor: pointer;
         display: flex;
         align-items: center;
         color: rgb(70, 201, 253);
@@ -134,6 +162,12 @@ a {
     
     .main-header .icon-menu:hover, .icon-search:hover {
         cursor: pointer;
+    }
+
+    .search-anime .input-search {
+        width: 300px;
+        background-color: rgb(182, 182, 182);
+        border-radius: 7px;
     }
 
 }
@@ -159,6 +193,7 @@ a {
     }
     
     .main-header .logo {
+        cursor: pointer;
         display: flex;
         align-items: center;
         color: rgb(70, 201, 253);
@@ -167,6 +202,12 @@ a {
         justify-content: center;
         text-align: center;
         align-items: center;
+    }
+
+    .search-anime .input-search {
+        width: 70vh;
+        background-color: rgb(182, 182, 182);
+        border-radius: 7px;
     }
 }
 
