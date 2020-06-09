@@ -12,7 +12,7 @@ import Contato from './pages/contato'
 import Sobre from './pages/sobre'
 import Staff from './pages/staff'
 import Sugerir from './pages/sugerir'
-import Anime from './pages/anime'
+import Anime from './pages/animePage/anime'
 
 export default function MainRoutes() {
     return (
