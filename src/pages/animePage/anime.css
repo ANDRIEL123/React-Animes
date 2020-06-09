@@ -1,0 +1,16 @@
+label {
+    color: white;
+}
+
+.main-anime .info-anime {
+    display: flex;
+    background-color: rgb(5, 5, 5);
+    padding: 2vw 2vh;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.main-anime .info-anime .other {
+    margin-left: 2%;
+    background-color: red;
+}
