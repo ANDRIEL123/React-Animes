@@ -1,10 +1,51 @@
-label {
-    color: white;
+h2 {
+    color: rgb(70, 201, 253);
 }
+
+.list-episodios  a {
+    text-decoration: none;
+    border: none;
+    margin-bottom: none;
+    border-bottom: none;
+    display: block;
+    background: rgb(32, 32, 32);
+    margin: 8px;
+    padding: none;
+    height: 170px;
+}
+
+
+.list-episodios .episodio strong {
+    font-size: 13px;
+}
+
+.list-episodios .episodio:hover, .list-episodios a:hover {
+    background: rgb(71, 71, 71);
+}
+
+.list-episodios {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    flex-wrap: wrap;
+    padding: 2px;
+    background-color: rgb(15, 15, 15);
+    width: 80%;
+}
+
+.list-episodios .episodio{
+    color: rgb(70, 201, 253);
+    margin-top: 10px;
+    width: 125px;
+    margin: 20px;
+    background-color: red;
+}
+
+
 
 .main-anime .info-anime {
     display: flex;
-    background-color: rgb(5, 5, 5);
+    background-color: rgb(32, 32, 32);
     padding: 2vw 2vh;
     margin-left: 10%;
     margin-right: 10%;
@@ -12,5 +53,40 @@ label {
 
 .main-anime .info-anime .other {
     margin-left: 2%;
-    background-color: red;
 }
+
+.main-anime .list-episodios {
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+@media screen and (max-width: 600px) {
+    h4 {
+        color: rgb(70, 201, 253);
+        font-size: 2vw;
+    }
+
+    .main-anime .info-anime img {
+        width: 125px;
+        height: 125px;
+    }
+
+    h2 {
+        display: flex;
+        justify-content: center;
+    }
+
+}
+
+@media screen and (min-width: 601px) {
+    h4 {
+        color: rgb(70, 201, 253);
+        font-size: 1vw;
+    }
+
+    h2 {
+        display: flex;
+        justify-content: center;
+    }
+}
+

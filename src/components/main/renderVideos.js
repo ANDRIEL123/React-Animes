@@ -44,9 +44,7 @@ export default class RenderMidia extends Component {
                 <h2>Lançamentos</h2>
 
                 <div className="list-videos">
-
                     {videos.map((videos) => (
-
                         <Link to={"/episodio/" + videos.idepisodios} >
                             <div className="videos" key={videos._id}>
                                 {console.log(videos.imgAnime)}
