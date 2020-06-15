@@ -2,6 +2,10 @@ h2 {
     color: rgb(70, 201, 253);
 }
 
+a {
+    color: rgb(70, 201, 253);
+}
+
 .list-episodios  a {
     text-decoration: none;
     border: none;

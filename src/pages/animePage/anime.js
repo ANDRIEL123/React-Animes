@@ -25,7 +25,6 @@ export default function Anime() {
 
     return (
         <div className="main-anime">
-            {console.log(anime)}
             <div className="title">
                 <h2>{anime.titleAnime}</h2>
             </div>

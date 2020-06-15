@@ -22,8 +22,8 @@ export default class RenderMidia extends Component {
 
     }
     renderVideos = async () => {
-        const response = await api.get('/episodios')
-        console.log(response.data.response)
+        const response = await api.get('/episodios/limit24')
+        console.log(response.data)
         this.setState({ videos: response.data.response })
 
     }
@@ -45,11 +45,13 @@ export default class RenderMidia extends Component {
 
                 <div className="list-videos">
                     {videos.map((videos) => (
+
                         <Link to={"/episodio/" + videos.idepisodios} >
+                            {console.log(videos)}
                             <div className="videos" key={videos._id}>
-                                {console.log(videos.imgAnime)}
-                                <img src={this.baseUrlUploads(videos.imgEpisodio, videos.imgAnime)} width="125px" height="100px" />
-                                <strong>{videos.titleEpisodio}</strong>
+                                <strong>{videos.titleAnime}</strong>
+                                <img src={this.baseUrlUploads(videos.imgEpisodio, videos.imgAnime)} width="125px" height="125px" />
+                                <strong>{`Episódio ${videos.titleEpisodio}`}</strong>
                             </div>
                         </Link>
                     ))}
