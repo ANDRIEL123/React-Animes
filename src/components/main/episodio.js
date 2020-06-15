@@ -29,25 +29,15 @@ export default function Episodio() {
         }
     }
 
-    //Código para carregar as informações do arquivo pela id pela api do google v2 em services apigoogleV2
-    const loadApiGoogle = async (id) => {
-        const response = await ApiGoogleV2.get(id)
-        setInfosGoogleDriveMidia(response.data)
-    }
-
     //Consulta vídeo e já passa as informações
     const consultaVideo = async () => {
         const response = await api.get(`/episodios/${id_episodio}`)
         const dataAnime = response.data.response
+        console.log(dataAnime)
         setEpisodio(dataAnime)
         const responsePlaylist = await api.get(`/episodios/animes/${dataAnime.idanimes}`)
         setPlaylist(responsePlaylist.data.response)
 
-        //Coloco aqui os métodos pois são carregadas as informações e já setar na inicialização do componente
-        //assim ficando mais fácil de manipular os dados pois o consultaVideo está no componentdidMount
-
-        //ID da mídia do Google drive + key da api do google drive
-        loadApiGoogle(dataAnime.keyEpisodio + "/?key=AIzaSyCxFhXZsTJVH8i4J2YOwkF6j5T_R6TKT4Q")
     }
 
 
@@ -67,14 +57,12 @@ export default function Episodio() {
     }
 
     const consultaVideoNext = async () => {
-
         const response = await api.get(`/episodios/${next()}`)
         let consultaEpisodio = response.data.response
         let keyEpisodio = response.data.response.keyEpisodio
         //Coloco aqui os métodos pois são carregadas as informações e já setar na inicialização do componente
         //assim ficando mais fácil de manipular os dados pois o consultaVideo está no componentdidMount
         setEpisodio(consultaEpisodio)
-        loadApiGoogle(keyEpisodio + "/?key=AIzaSyCxFhXZsTJVH8i4J2YOwkF6j5T_R6TKT4Q") //ID da mídia do Google drive + key da api do google drive
 
     }
 
@@ -98,7 +86,6 @@ export default function Episodio() {
         //Coloco aqui os métodos pois são carregadas as informações e já setar na inicialização do componente
         //assim ficando mais fácil de manipular os dados pois o consultaVideo está no componentdidMount
         setEpisodio(consultaEpisodio)
-        loadApiGoogle(keyEpisodio + "/?key=AIzaSyCxFhXZsTJVH8i4J2YOwkF6j5T_R6TKT4Q") //ID da mídia do Google drive + key da api do google drive
     }
 
     useEffect(() => {
@@ -133,7 +120,6 @@ export default function Episodio() {
         return (
             <div className="right" onClick={() => consultaVideoNext()}>
                 <button className="btn-right">
-                    < li >Próximo</li>
                     <img src={RightArrow} />
                 </button>
             </div >
@@ -146,8 +132,6 @@ export default function Episodio() {
             <div className="left" onClick={() => consultaVideoAfter()}>
                 <button className="btn-left">
                     <img src={LeftArrow} />
-                    <li>Anterior</li>
-
                 </button>
             </div>
         )
@@ -158,11 +142,11 @@ export default function Episodio() {
             <div className="anime">
 
                 <div className="class-title">
-                    <h2>
-                        <Link to={`/anime/${episodio.idanimes}`}>
-                            {episodio.titleAnime}
-                        </Link>
-                        {` - ${episodio.titleEpisodio}`}
+                    <h2><Link to={`/anime/${episodio.idanimes}`}>
+                        <strong>{`${episodio.titleAnime}`}</strong>
+                    </Link>
+                        <strong style={{ marginLeft: "5px" }}> - Episódio {episodio.titleEpisodio}</strong>
+
                     </h2>
                 </div>
 
@@ -171,7 +155,7 @@ export default function Episodio() {
                         // Disable right click
                         onContextMenu={e => e.preventDefault()}
                         // Your props
-                        url={infosGoogleDriveMidia.webContentLink}
+                        url={episodio.urlVideo}
                         className="react-player"
                         controls
                         width="100%"

@@ -25,7 +25,7 @@ export default function Anime() {
 
     return (
         <div className="main-anime">
-
+            {console.log(anime)}
             <div className="title">
                 <h2>{anime.titleAnime}</h2>
             </div>
@@ -34,9 +34,11 @@ export default function Anime() {
                 <div className="other">
                     <h4>Episódios: {episodiosAnime.length}</h4>
                     <p />
-                    <h4>Status: </h4>
+                    <h4>Status: {anime.situacaoAnime}</h4>
                     <p />
-                    <h4>Descrição: {anime.descriptionAnime}</h4>
+                    <h4>Lançamento: {anime.lancamentoAnime}</h4>
+                    <p />
+                    <h4>{anime.descriptionAnime}</h4>
                 </div>
             </div>
             <br></br>
@@ -49,8 +51,13 @@ export default function Anime() {
                         <div className="episodio" key={ep._id}>
                             <center>
                                 <img src={baseUrlUploads()} width="125px" height="100px" />
-                                <strong>{ep.titleAnime}</strong>
-                                <strong>{` - Episódio ${ep.titleEpisodio}`}</strong>
+                                <div>
+                                    <strong>{ep.titleAnime}</strong>
+                                </div>
+                                <div>
+                                    <strong>{`Episódio ${ep.titleEpisodio}`}</strong>
+                                </div>
+
                             </center>
                         </div>
                     </Link>
