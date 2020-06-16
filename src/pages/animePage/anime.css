@@ -15,7 +15,6 @@ a {
     background: rgb(32, 32, 32);
     margin: 8px;
     padding: none;
-    height: 170px;
 }
 
 
@@ -39,9 +38,12 @@ a {
 
 .list-episodios .episodio{
     color: rgb(70, 201, 253);
-    margin-top: 10px;
     width: 125px;
-    margin: 20px;
+    padding: 10px;
+}
+
+.list-episodios .episodio img{
+    margin-top: 0.5vw;
 }
 
 

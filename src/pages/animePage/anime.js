@@ -29,7 +29,7 @@ export default function Anime() {
                 <h2>{anime.titleAnime}</h2>
             </div>
             <div className="info-anime">
-                <img src={baseUrlUploads()} width="200px" height="200px" />
+                <img src={baseUrlUploads()} width="200px" height="225px" />
                 <div className="other">
                     <h4>Episódios: {episodiosAnime.length}</h4>
                     <p />
@@ -49,13 +49,10 @@ export default function Anime() {
                     <Link to={"/episodio/" + ep.idepisodios} >
                         <div className="episodio" key={ep._id}>
                             <center>
-                                <img src={baseUrlUploads()} width="125px" height="100px" />
-                                <div>
-                                    <strong>{ep.titleAnime}</strong>
-                                </div>
-                                <div>
-                                    <strong>{`Episódio ${ep.titleEpisodio}`}</strong>
-                                </div>
+                                <strong>{ep.titleAnime}</strong>
+                                <img src={baseUrlUploads()} width="125px" height="125px" />
+
+                                <strong>{`Episódio ${ep.titleEpisodio}`}</strong>
 
                             </center>
                         </div>
