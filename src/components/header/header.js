@@ -13,7 +13,9 @@ export default class Header extends Component {
     state = {
         open: false,
         search: '',
-        searchIsOpen: false
+        searchIsOpen: false,
+        resultPesquisa: false,
+        animesFilter: []
     }
 
     renderMenu = () => {
@@ -23,24 +25,63 @@ export default class Header extends Component {
         }
     }
 
+    loadFilterAnimes = async () => {
+        const { search } = this.state
+
+        const response = await api.get('/animes/filter/animes', {
+            //Envio ao back o parametro (query) titleAnime abaixo
+            //no back ficando req.query.titleAnime
+            params: {
+                titleAnime: search
+            }
+        })
+        this.setState({ animesFilter: response.data.response })
+
+    }
+
     changeHandler = e => {
+        const { search } = this.state
         this.setState({ [e.target.name]: e.target.value })
+        let sizeString = e.target.value.length
+        if (sizeString > 1) {
+            this.setState({ resultPesquisa: true })
+        } else {
+            this.setState({ resultPesquisa: false })
+        }
+    }
+
+    resultsPesquisa = () => {
+        if (this.state.resultPesquisa) {
+            return (
+                <div className="results-pesquisa">
+                    <li>Teste</li>
+                    <p>Chocolate</p>
+                    <b>Bola</b>
+                </div>
+            )
+        }
+
     }
 
     searchAnime = () => {
         const { searchIsOpen } = this.state
         if (searchIsOpen) {
             return (
-                <div className="search-anime">
-                    <TextField
-                        label="Pesquise o anime"
-                        type="text"
-                        name="search"
-                        className="input-search"
-                        value={this.state.search}
-                        onChange={this.changeHandler}
-                        variant="outlined"
-                        required />
+                <div>
+                    <div className="search-anime">
+                        <TextField
+                            label="Pesquise o anime pelo nome"
+                            type="text"
+                            name="search"
+                            className="input-search"
+                            value={this.state.search}
+                            onChange={this.changeHandler}
+                            onKeyDown={this.searchAnime}
+                            variant="outlined"
+                            required />
+
+                    </div>
+                    {this.resultsPesquisa()}
                 </div>
             )
         }
@@ -93,6 +134,7 @@ export default class Header extends Component {
                 </div>
 
                 {this.searchAnime()}
+
 
             </div>
 
