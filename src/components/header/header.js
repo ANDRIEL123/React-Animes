@@ -4,9 +4,10 @@ import logo from '../../logo.svg'
 import Search from '@material-ui/icons/Search'
 import TextField from '@material-ui/core/TextField';
 import Drawer from './drawer/headerDrawer'
+import api from '../../services/api'
 import './header.css'
 
-import { Link } from 'react-router-dom'
+import { Link, Navigate } from 'react-router-dom'
 
 
 export default class Header extends Component {
@@ -18,6 +19,10 @@ export default class Header extends Component {
         animesFilter: []
     }
 
+    changeHandler = e => {
+        this.setState({ [e.target.name]: e.target.value })
+    }
+
     renderMenu = () => {
         const { open } = this.state;
         if (open) {
@@ -25,40 +30,64 @@ export default class Header extends Component {
         }
     }
 
-    loadFilterAnimes = async () => {
-        const { search } = this.state
+
+    loadFilterAnimes = async (valueSearch) => {
+        console.log('entro')
 
         const response = await api.get('/animes/filter/animes', {
             //Envio ao back o parametro (query) titleAnime abaixo
             //no back ficando req.query.titleAnime
             params: {
-                titleAnime: search
+                titleAnime: valueSearch
             }
         })
-        this.setState({ animesFilter: response.data.response })
-
+        this.setState({ animesFilter: response.data.response, resultPesquisa: true })
     }
 
-    changeHandler = e => {
-        const { search } = this.state
-        this.setState({ [e.target.name]: e.target.value })
-        let sizeString = e.target.value.length
-        if (sizeString > 1) {
-            this.setState({ resultPesquisa: true })
-        } else {
-            this.setState({ resultPesquisa: false })
-        }
+    baseUrlUploads = (imgAnime) => {
+        return `${process.env.REACT_APP_API_URL}/uploads/${imgAnime}`
     }
+
 
     resultsPesquisa = () => {
-        if (this.state.resultPesquisa) {
-            return (
-                <div className="results-pesquisa">
-                    <li>Teste</li>
-                    <p>Chocolate</p>
-                    <b>Bola</b>
-                </div>
-            )
+        const { resultPesquisa, animesFilter } = this.state
+        if (resultPesquisa) {
+
+            let validaPath = window.location.pathname.split('/')
+            /* Se estiver na rota /anime, então usa o gerirRotas para dar reload
+            já que está na mesma página, porém em um anime diferente */
+            if (validaPath[1] === 'anime') {
+                return (
+                    <center>
+                        <div className="results-animes">
+                            {animesFilter.map(anime => (
+
+                                <div className="results-pesquisa" onClick={() => this.gerirRotas(`/anime/${anime.idanimes}`)}>
+                                    <img src={this.baseUrlUploads(anime.imgAnime)} width="50px" height="65px" />
+                                    <strong>{anime.titleAnime}</strong>
+                                </div>
+
+                            ))}
+                        </div>
+                    </center>
+                )
+            } else {
+                return (
+                    <center>
+                        <div className="results-animes">
+                            {animesFilter.map(anime => (
+                                <Link to={`/anime/${anime.idanimes}`}>
+                                    <div className="results-pesquisa" onClick={() => this.setState({ resultPesquisa: false })}>
+                                        <img src={this.baseUrlUploads(anime.imgAnime)} width="50px" height="65px" />
+                                        <strong>{anime.titleAnime}</strong>
+                                    </div>
+                                </Link>
+                            ))}
+                        </div>
+                    </center>
+                )
+            }
+
         }
 
     }
@@ -74,12 +103,15 @@ export default class Header extends Component {
                             type="text"
                             name="search"
                             className="input-search"
-                            value={this.state.search}
-                            onChange={this.changeHandler}
-                            onKeyDown={this.searchAnime}
                             variant="outlined"
-                            required />
-
+                            onChange={(event) => {
+                                let lengthSearch = event.target.value.length
+                                if (lengthSearch > 1) {
+                                    this.loadFilterAnimes(event.target.value)
+                                } else {
+                                    this.setState({ resultPesquisa: false })
+                                }
+                            }} />
                     </div>
                     {this.resultsPesquisa()}
                 </div>
@@ -134,7 +166,6 @@ export default class Header extends Component {
                 </div>
 
                 {this.searchAnime()}
-
 
             </div>
 

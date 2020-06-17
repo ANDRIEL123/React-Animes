@@ -1,6 +1,10 @@
-.results-pesquisa {
-    display: flex;
-    justify-content: center;
+::-webkit-scrollbar {
+    background-color: rgba(16, 15, 36, 0.281);
+}             
+
+::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.664);
+    border-radius: 10px;
 }
 
 a {
@@ -57,6 +61,36 @@ a {
         background-color: rgb(182, 182, 182);
         border-radius: 10px;
     }
+
+    .results-animes {
+        border-radius: 10px;
+        width: 500px;
+        height: 195px;
+        background-color: rgba(0, 0, 0, 0.24);
+        overflow: auto;
+    }
+
+    .results-animes .results-pesquisa {
+        display: flex;
+        margin-top: 4px;
+        background-color: rgba(0, 0, 0, 0.521);
+        border-radius: 1vw;
+        align-items: center;
+    }
+
+    .results-animes .results-pesquisa:hover {
+        cursor: pointer;
+        background-color: rgba(16, 18, 56, 0.616);
+    }
+
+    .results-animes .results-pesquisa img{
+        margin-left: 1.5vw;
+    }
+
+    .results-animes .results-pesquisa strong {
+        margin-left: 1vw;
+        color: rgb(70, 201, 253);
+    }
 }
 
 @media screen and (max-width: 699px) and (min-width: 531px) {
@@ -101,6 +135,36 @@ a {
         background-color: rgb(182, 182, 182);
         border-radius: 9px;
     }
+
+    .results-animes {
+        border-radius: 10px;
+        width: 450px;
+        height: 195px;
+        background-color: rgba(0, 0, 0, 0.24);
+        overflow: auto;
+    }
+
+    .results-animes .results-pesquisa {
+        display: flex;
+        margin-top: 4px;
+        background-color: rgba(0, 0, 0, 0.521);
+        border-radius: 1vw;
+        align-items: center;
+    }
+
+    .results-animes .results-pesquisa:hover {
+        cursor: pointer;
+        background-color: rgba(16, 18, 56, 0.616);
+    }
+
+    .results-animes .results-pesquisa img{
+        margin-left: 1.5vw;
+    }
+
+    .results-animes .results-pesquisa strong {
+        margin-left: 1vw;
+        color: rgb(70, 201, 253);
+    }
 }
 @media screen and (max-width: 530px)  and (min-width: 401px) {
     .main-header {
@@ -144,6 +208,36 @@ a {
         background-color: rgb(182, 182, 182);
         border-radius: 8px;
     }
+
+    .results-animes {
+        border-radius: 10px;
+        width: 350px;
+        height: 195px;
+        background-color: rgba(0, 0, 0, 0.24);
+        overflow: auto;
+    }
+
+    .results-animes .results-pesquisa {
+        display: flex;
+        margin-top: 4px;
+        background-color: rgba(0, 0, 0, 0.521);
+        border-radius: 1vw;
+        align-items: center;
+    }
+
+    .results-animes .results-pesquisa:hover {
+        cursor: pointer;
+        background-color: rgba(16, 18, 56, 0.616);
+    }
+
+    .results-animes .results-pesquisa img{
+        margin-left: 1.5vw;
+    }
+
+    .results-animes .results-pesquisa strong {
+        margin-left: 1vw;
+        color: rgb(70, 201, 253);
+    }
 }
 
 @media screen and (max-width: 400px) and (min-width: 301px) {
@@ -173,6 +267,35 @@ a {
         width: 300px;
         background-color: rgb(182, 182, 182);
         border-radius: 7px;
+    }
+    .results-animes {
+        border-radius: 10px;
+        width: 300px;
+        height: 195px;
+        background-color: rgba(0, 0, 0, 0.24);
+        overflow: auto;
+    }
+
+    .results-animes .results-pesquisa {
+        display: flex;
+        margin-top: 4px;
+        background-color: rgba(0, 0, 0, 0.521);
+        border-radius: 1vw;
+        align-items: center;
+    }
+
+    .results-animes .results-pesquisa:hover {
+        cursor: pointer;
+        background-color: rgba(16, 18, 56, 0.616);
+    }
+
+    .results-animes .results-pesquisa img{
+        margin-left: 1.5vw;
+    }
+
+    .results-animes .results-pesquisa strong {
+        margin-left: 1vw;
+        color: rgb(70, 201, 253);
     }
 
 }
@@ -213,6 +336,36 @@ a {
         width: 70vh;
         background-color: rgb(182, 182, 182);
         border-radius: 7px;
+    }
+
+    .results-animes {
+        border-radius: 10px;
+        width: 70vh;
+        height: 195px;
+        background-color: rgba(0, 0, 0, 0.24);
+        overflow: auto;
+    }
+
+    .results-animes .results-pesquisa {
+        display: flex;
+        margin-top: 4px;
+        background-color: rgba(0, 0, 0, 0.521);
+        border-radius: 1vw;
+        align-items: center;
+    }
+
+    .results-animes .results-pesquisa:hover {
+        cursor: pointer;
+        background-color: rgba(16, 18, 56, 0.616);
+    }
+
+    .results-animes .results-pesquisa img{
+        margin-left: 1.5vw;
+    }
+
+    .results-animes .results-pesquisa strong {
+        margin-left: 1vw;
+        color: rgb(70, 201, 253);
     }
 }
 

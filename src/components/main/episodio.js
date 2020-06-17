@@ -119,9 +119,7 @@ export default function Episodio() {
     const Right = () => {
         return (
             <div className="right" onClick={() => consultaVideoNext()}>
-                <button className="btn-right">
-                    <img src={RightArrow} />
-                </button>
+                <img src={RightArrow} />
             </div >
         )
     }
@@ -130,9 +128,7 @@ export default function Episodio() {
     const Left = () => {
         return (
             <div className="left" onClick={() => consultaVideoAfter()}>
-                <button className="btn-left">
-                    <img src={LeftArrow} />
-                </button>
+                <img src={LeftArrow} />
             </div>
         )
     }
