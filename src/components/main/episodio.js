@@ -141,7 +141,7 @@ export default function Episodio() {
                     <h2><Link to={`/anime/${episodio.idanimes}`}>
                         <strong>{`${episodio.titleAnime}`}</strong>
                     </Link>
-                        <strong style={{ marginLeft: "5px" }}> - Episódio {episodio.titleEpisodio}</strong>
+                        <strong style={{ marginLeft: "2px" }}> - Episódio {episodio.titleEpisodio}</strong>
 
                     </h2>
                 </div>

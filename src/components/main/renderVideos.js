@@ -23,7 +23,6 @@ export default class RenderMidia extends Component {
     }
     renderVideos = async () => {
         const response = await api.get('/episodios/limit24')
-        console.log(response.data)
         this.setState({ videos: response.data.response })
 
     }

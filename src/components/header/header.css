@@ -199,15 +199,8 @@ a {
     .main-header .search {
         display: flex;
         align-items: center;
-        margin-right: 8vmin;
-        
+        margin-right: 10px;
     }    
-
-    .search-anime .input-search {
-        width: 350px;
-        background-color: rgb(182, 182, 182);
-        border-radius: 8px;
-    }
 
     .results-animes {
         border-radius: 10px;
@@ -237,6 +230,11 @@ a {
     .results-animes .results-pesquisa strong {
         margin-left: 1vw;
         color: rgb(70, 201, 253);
+    }
+
+    .main-header .icon-menu {
+        float: left;
+        margin-left: 10px;
     }
 }
 
@@ -296,6 +294,17 @@ a {
     .results-animes .results-pesquisa strong {
         margin-left: 1vw;
         color: rgb(70, 201, 253);
+    }
+
+    .main-header .search {
+        display: flex;
+        align-items: center;
+        margin-right: 10px;
+    }
+
+    .main-header .icon-menu {
+        float: left;
+        margin-left: 10px;
     }
 
 }
@@ -366,6 +375,17 @@ a {
     .results-animes .results-pesquisa strong {
         margin-left: 1vw;
         color: rgb(70, 201, 253);
+    }
+
+    .main-header .search {
+        display: flex;
+        align-items: center;
+        margin-right: 8px;
+    }
+
+    .main-header .icon-menu {
+        float: left;
+        margin-left: 8px;
     }
 }
 

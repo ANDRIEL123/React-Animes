@@ -3,7 +3,7 @@
 }
 
 .anime {
-  width: 60%;
+  width: 72%;
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -26,13 +26,20 @@
 
 @media screen and (min-width: 801px) {
   h2 {
-      font-size: 1.5vw;
+      font-size: 1.5vw;  
+      margin-top: 3vw;
   }
+  
 }
 
 @media screen and (max-width: 800px) {
   h2 {
-      font-size: 2.5vw;
+      font-size: 2.2vw;
+      margin-top: 10vw;
+  }
+  .player-wrapper {
+    margin-top: 2vw;
+    height: 200px;
   }
 }
 
@@ -101,11 +108,9 @@
 
 @media screen and (max-width: 500px) {
 .player-wrapper {
-  height: 200px;
+  
 }
-h2 {
-  font-size: 14px;
-}
+
 }
 
 @media screen and (min-width: 501px) and (max-width: 700px) {
@@ -113,9 +118,6 @@ h2 {
     height: 300px;
   }
 
-  h2 {
-    font-size: 20px;
-  }
   }
 
   
@@ -124,9 +126,6 @@ h2 {
     height: 350px;
   }
 
-  h2 {
-    font-size: 20px;
-  }
   }
 
   @media screen and (min-width: 901px) and (max-width: 1100px) {
@@ -134,17 +133,10 @@ h2 {
       height: 400px;
     }
   
-    h2 {
-      font-size: 20px;
-    }
     }
   
     @media screen and (min-width: 1101px) {
       .player-wrapper {
         height: 550px;
-      }
-
-      h2 {
-        font-size: 20px;
       }
       }
