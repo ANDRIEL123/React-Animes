@@ -176,7 +176,6 @@ export default function Episodio() {
 
                 </div>
 
-
                 <div>
                     <h3> © React Animes </h3>
                 </div>
