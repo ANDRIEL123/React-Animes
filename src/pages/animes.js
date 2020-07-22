@@ -5,7 +5,7 @@ export default class RenderMidia extends Component {
     state = {
         playlists: []
     }
-
+    /*
     componentDidMount() {
         this.renderPlaylists()
     }
@@ -57,4 +57,5 @@ export default class RenderMidia extends Component {
             </div>
         )
     }
+    */
 }

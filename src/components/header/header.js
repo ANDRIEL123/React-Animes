@@ -10,14 +10,16 @@ import './header.css'
 import { Link, Navigate } from 'react-router-dom'
 
 
-export default class Header extends Component {
+class Header extends Component {
     state = {
         open: false,
         search: '',
         searchIsOpen: false,
         resultPesquisa: false,
-        animesFilter: []
+        animesFilter: [],
+        auxRota: ''
     }
+
 
     changeHandler = e => {
         this.setState({ [e.target.name]: e.target.value })
@@ -43,6 +45,7 @@ export default class Header extends Component {
         })
         this.setState({ animesFilter: response.data.response, resultPesquisa: true })
     }
+
 
     baseUrlUploads = (imgAnime) => {
         return `${process.env.REACT_APP_API_URL}/uploads/${imgAnime}`
@@ -89,10 +92,11 @@ export default class Header extends Component {
             }
 
         }
-
     }
 
     searchAnime = () => {
+
+
         const { searchIsOpen } = this.state
         if (searchIsOpen) {
             return (
@@ -104,6 +108,7 @@ export default class Header extends Component {
                             name="search"
                             className="input-search"
                             variant="outlined"
+
                             onChange={(event) => {
                                 let lengthSearch = event.target.value.length
                                 if (lengthSearch > 1) {
@@ -173,3 +178,5 @@ export default class Header extends Component {
 
     }
 }
+
+export default Header;
