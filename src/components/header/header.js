@@ -20,7 +20,6 @@ class Header extends Component {
         auxRota: ''
     }
 
-
     changeHandler = e => {
         this.setState({ [e.target.name]: e.target.value })
     }
@@ -64,15 +63,17 @@ class Header extends Component {
                     <center>
                         <div className="results-animes">
                             {animesFilter.map(anime => (
-
-                                <div className="results-pesquisa" onClick={() => this.gerirRotas(`/anime/${anime.idanimes}`)}>
+                                <div className="results-pesquisa" onClick={() => {
+                                    this.setState({ searchIsOpen: false })
+                                    this.gerirRotas(`/anime/${anime.idanimes}`)
+                                }}>
                                     <img src={this.baseUrlUploads(anime.imgAnime)} width="50px" height="65px" />
                                     <strong>{anime.titleAnime}</strong>
                                 </div>
 
                             ))}
                         </div>
-                    </center>
+                    </center >
                 )
             } else {
                 return (
@@ -80,14 +81,14 @@ class Header extends Component {
                         <div className="results-animes">
                             {animesFilter.map(anime => (
                                 <Link to={`/anime/${anime.idanimes}`}>
-                                    <div className="results-pesquisa" onClick={() => this.setState({ resultPesquisa: false })}>
+                                    <div className="results-pesquisa" onClick={() => this.setState({ resultPesquisa: false, searchIsOpen: false })}>
                                         <img src={this.baseUrlUploads(anime.imgAnime)} width="50px" height="65px" />
                                         <strong>{anime.titleAnime}</strong>
                                     </div>
                                 </Link>
                             ))}
                         </div>
-                    </center>
+                    </center >
                 )
             }
 
@@ -95,8 +96,6 @@ class Header extends Component {
     }
 
     searchAnime = () => {
-
-
         const { searchIsOpen } = this.state
         if (searchIsOpen) {
             return (
@@ -108,7 +107,6 @@ class Header extends Component {
                             name="search"
                             className="input-search"
                             variant="outlined"
-
                             onChange={(event) => {
                                 let lengthSearch = event.target.value.length
                                 if (lengthSearch > 1) {
@@ -144,7 +142,7 @@ class Header extends Component {
                             if (open) {
                                 this.setState({ open: false })
                             } else {
-                                this.setState({ open: true })
+                                this.setState({ open: true, searchIsOpen: false })
                             }
                         }} /></a>
                     </div>
@@ -155,11 +153,11 @@ class Header extends Component {
                     </div>
                     <div className="search" onClick={() => {
                         if (searchIsOpen) {
-                            this.setState({ searchIsOpen: false })
+                            this.setState({ searchIsOpen: false, animesFilter: [] })
                         } else {
-                            this.setState({ searchIsOpen: true })
+                            this.setState({ searchIsOpen: true, open: false })
                         }
-                    }}>
+                    }} >
                         <Search className="icon-search" />
 
                     </div>
