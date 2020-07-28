@@ -32,15 +32,13 @@ h2 {
     background: rgb(71, 71, 71);
 }
 
-
-
 .list-videos .videos{
     margin-left: 4px;
     margin-right: 4px;
     color: rgb(70, 201, 253);
     margin-top: 10px;
     width: 150px;
-    height: 200px;
+    height: 220px;
 }
 
 .list-videos .videos img {
