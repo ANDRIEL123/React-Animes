@@ -19,11 +19,13 @@ li {
 .drawer .animes:hover, .staff:hover, .sugerir:hover, .sobre:hover, .contato:hover {
     cursor: pointer;
     background: rgba(117, 117, 117, 0.685);
+    
 }
 
 .drawer .animes, .staff, .sugerir, .sobre, .contato {
     display: flex;
-    padding: 3vmin;
+    padding: 11px;
+    border: groove black 0.1px;
     }
 }
 
@@ -55,7 +57,7 @@ li {
         text-align: center;
         justify-content: center;
         width: 100%;
-        padding: 3vmin;
-        
+        padding: 7px;
+        border: groove black 0.1px;
         }
     }

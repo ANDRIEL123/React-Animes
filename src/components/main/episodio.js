@@ -18,7 +18,6 @@ export default function Episodio() {
     let { id_episodio } = useParams()
     let [episodio, setEpisodio] = useState({})
     let [playlist, setPlaylist] = useState([])
-    let [infosGoogleDriveMidia, setInfosGoogleDriveMidia] = useState({})
 
     //Script para retornar qual o episodio atual
     const retornaPosicao = () => {
@@ -40,12 +39,8 @@ export default function Episodio() {
 
     }
 
-
-
     const next = () => {
         for (let index = 0; index < playlist.length; index++) {
-
-
             //No if a seguir temos index < playlist.lengh - 1, ou seja se a playlist possuí tamanho 25
             //logo o index chegará até o 24 e assim a condição de retorno só irá ser executada
             //até a posição 23, assim quando estiver na posição 23 e clicar em [proximo >]
@@ -63,9 +58,7 @@ export default function Episodio() {
         //Coloco aqui os métodos pois são carregadas as informações e já setar na inicialização do componente
         //assim ficando mais fácil de manipular os dados pois o consultaVideo está no componentdidMount
         setEpisodio(consultaEpisodio)
-
     }
-
 
     const after = () => {
         for (let index = 0; index < playlist.length; index++) {
@@ -142,7 +135,6 @@ export default function Episodio() {
                         <strong>{`${episodio.titleAnime}`}</strong>
                     </Link>
                         <strong style={{ marginLeft: "2px" }}> - Episódio {episodio.titleEpisodio}</strong>
-
                     </h2>
                 </div>
 

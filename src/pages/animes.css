@@ -1,13 +1,156 @@
+@media screen and (min-width: 700px) {
 
+    .results-anime {
+        border-radius: 10px;
+        width: 65%;
+        background-color: rgba(0, 0, 0, 0.24);
+        overflow: auto;
+    }
 
+    .results-anime .results-pesquisa {
+        display: flex;
+        margin-top: 4px;
+        background-color: rgba(0, 0, 0, 0.521);
+        border-radius: 1vw;
+        align-items: center;
+    }
 
-.animes .videos {
-    background-color: rgb(0, 162, 255);
-    width: 70%;
-    border-radius: 10px;
-    padding: 10px;
-    display: flex;
-    text-align: center;
-    justify-content: center;
+    .results-anime .results-pesquisa:hover {
+        cursor: pointer;
+        background-color: rgba(16, 18, 56, 0.616);
+    }
+
+    .results-anime .results-pesquisa img{
+        margin-left: 1.5vw;
+    }
+
+    .results-anime .results-pesquisa strong {
+        margin-left: 1vw;
+        color: rgb(70, 201, 253);
+    }
 }
+
+@media screen and (max-width: 699px) and (min-width: 531px) {
+    .results-anime {
+        border-radius: 10px;
+        width: 450px;
+        background-color: rgba(0, 0, 0, 0.24);
+    }
+
+    .results-anime .results-pesquisa {
+        display: flex;
+        margin-top: 4px;
+        background-color: rgba(0, 0, 0, 0.521);
+        border-radius: 1vw;
+        align-items: center;
+    }
+
+    .results-anime .results-pesquisa:hover {
+        cursor: pointer;
+        background-color: rgba(16, 18, 56, 0.616);
+    }
+
+    .results-anime .results-pesquisa img{
+        margin-left: 1.5vw;
+    }
+
+    .results-anime .results-pesquisa strong {
+        margin-left: 1vw;
+        color: rgb(70, 201, 253);
+    }
+}
+@media screen and (max-width: 530px)  and (min-width: 401px) {
+    .results-anime {
+        border-radius: 10px;
+        width: 350px;
+        background-color: rgba(0, 0, 0, 0.24);
+    }
+
+    .results-anime .results-pesquisa {
+        display: flex;
+        margin-top: 4px;
+        background-color: rgba(0, 0, 0, 0.521);
+        border-radius: 1vw;
+        align-items: center;
+    }
+
+    .results-anime .results-pesquisa:hover {
+        cursor: pointer;
+        background-color: rgba(16, 18, 56, 0.616);
+    }
+
+    .results-anime .results-pesquisa img{
+        margin-left: 1.5vw;
+    }
+
+    .results-anime .results-pesquisa strong {
+        margin-left: 1vw;
+        color: rgb(70, 201, 253);
+    }
+}
+
+@media screen and (max-width: 400px) and (min-width: 301px) {
+
+    .results-anime {
+        border-radius: 10px;
+        width: 300px;
+        background-color: rgba(0, 0, 0, 0.24);
+    }
+
+    .results-anime .results-pesquisa {
+        display: flex;
+        margin-top: 4px;
+        background-color: rgba(0, 0, 0, 0.521);
+        border-radius: 1vw;
+        align-items: center;
+    }
+
+    .results-anime .results-pesquisa:hover {
+        cursor: pointer;
+        background-color: rgba(16, 18, 56, 0.616);
+    }
+
+    .results-anime .results-pesquisa img{
+        margin-left: 1.5vw;
+    }
+
+    .results-anime .results-pesquisa strong {
+        margin-left: 1vw;
+        color: rgb(70, 201, 253);
+    }
+
+}
+
+@media screen and (max-width: 300px) {
+    .results-anime {
+        border-radius: 10px;
+        width: 70vh;
+        background-color: rgba(0, 0, 0, 0.24);
+    }
+
+    .results-anime .results-pesquisa {
+        display: flex;
+        margin-top: 4px;
+        background-color: rgba(0, 0, 0, 0.521);
+        border-radius: 1vw;
+        align-items: center;
+    }
+
+    .results-anime .results-pesquisa:hover {
+        cursor: pointer;
+        background-color: rgba(16, 18, 56, 0.616);
+    }
+
+    .results-anime .results-pesquisa img{
+        margin-left: 1.5vw;
+    }
+
+    .results-anime .results-pesquisa strong {
+        margin-left: 1vw;
+        color: rgb(70, 201, 253);
+    }
+
+
+}
+
 

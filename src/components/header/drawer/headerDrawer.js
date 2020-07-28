@@ -34,7 +34,6 @@ export default function Drawer() {
                 <img src={sobre} className="App-sobre" />
                 <li>Sobre</li>
             </div>
-
         </div>
     )
 }

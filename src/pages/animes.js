@@ -1,61 +1,49 @@
-import React, { Component } from 'react'
+import React, { Component, useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
+import api from '../services/api'
 import './animes.css'
 
-export default class RenderMidia extends Component {
-    state = {
-        playlists: []
-    }
-    /*
-    componentDidMount() {
-        this.renderPlaylists()
-    }
+function Animes() {
+    let [animes, setAnimes] = useState([]);
 
-    filtraPlayListExistentes = (playlists) => {
-        let anime = []
-        for (let index = 0; index < playlists.length; index++) {
-            if (playlists[index].type === 'manual') {
-                anime.push(playlists[index]);
-            }
-        }
-        return anime
+    const loadAnimes = async () => {
+        const response = await api.get("/animes");
+        setAnimes(response.data.response)
+
     }
 
-    renderPlaylists = () => {
-        //DOCUMENTAÇÃO: https://www.npmjs.com/package/jwplatform
-        //Acessar em node_modelues jwplatform e no arquivo client.js em this.baseUrl alterar para
-        //this.baseUrl = 'https://cors-anywhere.herokuapp.com/https://api.jwplatform.com/v1/';
-        //Assim liberandos as cors
-        const JWPlatformAPI = require('jwplatform');
-
-        const jwApi = new JWPlatformAPI({ apiKey: 'heLimJnV', apiSecret: 'i1u5Qq8aD62PYy2bAemWZ9sy' });
-
-        //Caso queira filtrar os retornos: função abaixo
-        //jwApi.channels.list({ search:  }).then((response) => {
-        //em search deverá ir alocando o texto e assim irá filtrandos os retorno
-        jwApi.channels.list().then((response) => {
-            this.setState({ playlists: this.filtraPlayListExistentes(response.channels) })
-        })
+    const baseUrlUploads = (imgAnime) => {
+        return `${process.env.REACT_APP_API_URL}/uploads/${imgAnime}`
     }
 
-    render() {
-        const { playlists } = this.state;
-        return (
-            <div>
-                <center>
-                    <div className="title-animes">
-                        <h2>Animes</h2>
-                        {console.log(playlists)}
-                    </div>
-                    <div className="animes">
-                        {playlists.map((playlists) => (
-                            <div className="videos" key={playlists._id}>
-                                <strong>{playlists.title}</strong>
-                            </div>
-                        ))}
-                    </div>
-                </center>
-            </div>
-        )
+    useEffect(() => {
+        loadAnimes()
+    }, [])
+
+    const pegaUrlAtual = () => {
+        const url = window.location.href.split(window.location.pathname)
+        return url[0]
     }
-    */
+
+    const gerirRotas = (rota) => {
+        window.location.href = pegaUrlAtual() + rota
+    }
+
+    return (
+        <div className="main-animes">
+            <h2>Lista de Animes</h2>
+            <center>
+                <div className="results-anime">
+                    {animes.map(anime => (
+                        <div className="results-pesquisa" onClick={() => gerirRotas(`/anime/${anime.idanimes}`)}>
+                            <img src={baseUrlUploads(anime.imgAnime)} width="50px" height="65px" />
+                            <strong>{anime.titleAnime}</strong>
+                        </div>
+                    ))}
+                </div>
+            </center >
+        </div>
+    )
 }
+
+export default Animes;

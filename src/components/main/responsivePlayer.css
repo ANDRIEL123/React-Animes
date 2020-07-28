@@ -3,7 +3,7 @@
 }
 
 .anime {
-  width: 72%;
+  width: 80%;
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -24,24 +24,7 @@
   border: 1px solid rgba(0, 0, 0, 0.404);
 }
 
-@media screen and (min-width: 801px) {
-  h2 {
-      font-size: 1.5vw;  
-      margin-top: 3vw;
-  }
-  
-}
 
-@media screen and (max-width: 800px) {
-  h2 {
-      font-size: 2.2vw;
-      margin-top: 10vw;
-  }
-  .player-wrapper {
-    margin-top: 2vw;
-    height: 200px;
-  }
-}
 
 .player-wrapper {
   justify-content: center;
@@ -49,9 +32,7 @@
   display: flex;
 }
 
-.arrows .list {
-  padding: 5px;
-}
+
 
 .player-wrapper .react-player {
   border: solid 0.5px rgb(70, 201, 253);
@@ -100,43 +81,54 @@
   background: rgba(201, 229, 255, 0.692);
 }
 
-.arrows .left li, .right li {
-  font-size: 15px;
-  font-weight: bold;
-}
+@media screen and (min-width: 901px) {
+  h2 {
+      font-size: 1.5vw;  
+      margin-top: 3vw;
+  }
 
-
-@media screen and (max-width: 500px) {
-.player-wrapper {
+  .arrows .list {
+    padding: 5px;
+  }
   
 }
-
-}
-
-@media screen and (min-width: 501px) and (max-width: 700px) {
-  .player-wrapper {
-    height: 300px;
-  }
-
-  }
-
   
 @media screen and (min-width: 701px) and (max-width: 900px) {
+  h2 {
+    font-size: 2.2vw;
+    margin-top: 10vw;
+}
+.player-wrapper {
+  margin-top: 2vw;
+  height: 75px;
+}
+
+.arrows .list {
+  padding: 4px;
+}
+}
+
+  @media screen and (min-width: 400px) and (max-width: 700px) {
+    h2 {
+      font-size: 2.8vw;
+      margin-top: 10vw;
+  }
+  .arrows .list {
+    padding: 3px;
+  }
+
   .player-wrapper {
-    height: 350px;
+    margin-top: 2vw;
+    height: 45vw;
+  }
   }
 
+  @media screen and (max-width: 399px) {
+    h2 {
+      font-size: 3vw;
+      margin-top: 10vw;
   }
-
-  @media screen and (min-width: 901px) and (max-width: 1100px) {
-    .player-wrapper {
-      height: 400px;
-    }
-  
-    }
-  
-    @media screen and (min-width: 1101px) {
-      .player-wrapper {
-        height: 550px;
-      }
-      }
+  .arrows .list {
+    padding: 1px;
+  }
+  }
