@@ -28,6 +28,9 @@ a {
 }
 
 @media screen and (min-width: 700px) {
+    h2 {
+        font-size: 21px;
+    }
     .main-header {
         width: 100%;
         align-items: center;
@@ -94,6 +97,10 @@ a {
 }
 
 @media screen and (max-width: 699px) and (min-width: 531px) {
+    h2 {
+        font-size: 20px;
+    }
+    
     .main-header {
         width: 100%;
         align-items: center;
@@ -103,6 +110,7 @@ a {
     }
     
     .main-header .icon-menu {
+        margin-left: 10px;
         float: left;
     }
 
@@ -120,13 +128,14 @@ a {
     }
     
     .main-header .icon-menu:hover, .icon-search:hover {
+        
         cursor: pointer;
     }
     
     .main-header .search {
         display: flex;
         align-items: center;
-        margin-right: 8vmin;
+        margin-right: 10px;
         
     }
 
@@ -167,6 +176,10 @@ a {
     }
 }
 @media screen and (max-width: 530px)  and (min-width: 401px) {
+    h2 {
+        font-size: 18px;
+    }
+
     .main-header {
         width: 100%;
         align-items: center;
@@ -177,6 +190,7 @@ a {
     
     .main-header .icon-menu {
         float: left;
+        margin-left: 8px;
     }
 
     .main-header .search .txt-search {
@@ -199,7 +213,7 @@ a {
     .main-header .search {
         display: flex;
         align-items: center;
-        margin-right: 10px;
+        margin-right: 8px;
     }    
 
     .results-animes {
@@ -234,11 +248,15 @@ a {
 
     .main-header .icon-menu {
         float: left;
-        margin-left: 10px;
+        margin-left: 8px;
     }
 }
 
 @media screen and (max-width: 400px) and (min-width: 301px) {
+    h2 {
+        font-size: 17px;
+    }
+
     .main-header {
         width: 100%;
         align-items: center;
@@ -299,17 +317,21 @@ a {
     .main-header .search {
         display: flex;
         align-items: center;
-        margin-right: 10px;
+        margin-right: 5px;
     }
 
     .main-header .icon-menu {
         float: left;
-        margin-left: 10px;
+        margin-left: 5px;
     }
 
 }
 
 @media screen and (max-width: 300px) {
+    h2 {
+        font-size: 14px;
+    }
+
     .main-header {
         width: 100%;
         align-items: center;
