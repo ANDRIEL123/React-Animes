@@ -48,9 +48,9 @@ export default class RenderMidia extends Component {
                         <Link to={"/episodio/" + videos.idepisodios} >
                             {console.log(videos)}
                             <div className="videos" key={videos._id}>
-                                <strong>{videos.titleAnime}</strong>
+                                <strong className="title">{videos.titleAnime}</strong>
                                 <img src={this.baseUrlUploads(videos.imgEpisodio, videos.imgAnime)} width="125px" height="125px" />
-                                <strong>{`Episódio ${videos.titleEpisodio}`}</strong>
+                                <strong className="num-episodio">{`Episódio ${videos.titleEpisodio}`}</strong>
                             </div>
                         </Link>
                     ))}

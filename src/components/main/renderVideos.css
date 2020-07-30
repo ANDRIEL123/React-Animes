@@ -33,12 +33,17 @@ h2 {
 }
 
 .list-videos .videos{
+    padding: 1px;
     margin-left: 4px;
     margin-right: 4px;
     color: rgb(70, 201, 253);
     margin-top: 10px;
     width: 150px;
-    height: 220px;
+    max-height: 220px;
+}
+
+.list-videos .videos .title{
+    
 }
 
 .list-videos .videos img {
