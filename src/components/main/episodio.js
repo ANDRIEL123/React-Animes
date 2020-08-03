@@ -3,7 +3,6 @@ import { useParams } from 'react-router-dom'
 import ReactPlayer from 'react-player'
 import api from '../../services/api'
 import ListAnimes from '../header/imgs/icons/nav-anime/view_headline-black-18dp/2x/list.png'
-import ApiGoogleV2 from '../../services/apiGoogle'
 import RightArrow from '../header/imgs/icons/nav-anime/keyboard_arrow_right-black-18dp/2x/rightarrow.png'
 import LeftArrow from '../header/imgs/icons/nav-anime/keyboard_arrow_left-black-18dp/2x/leftarrow.png'
 
@@ -32,7 +31,6 @@ export default function Episodio() {
     const consultaVideo = async () => {
         const response = await api.get(`/episodios/${id_episodio}`)
         const dataAnime = response.data.response
-        console.log(dataAnime)
         setEpisodio(dataAnime)
         const responsePlaylist = await api.get(`/episodios/animes/${dataAnime.idanimes}`)
         setPlaylist(responsePlaylist.data.response)
@@ -54,7 +52,6 @@ export default function Episodio() {
     const consultaVideoNext = async () => {
         const response = await api.get(`/episodios/${next()}`)
         let consultaEpisodio = response.data.response
-        let keyEpisodio = response.data.response.keyEpisodio
         //Coloco aqui os métodos pois são carregadas as informações e já setar na inicialização do componente
         //assim ficando mais fácil de manipular os dados pois o consultaVideo está no componentdidMount
         setEpisodio(consultaEpisodio)
@@ -75,7 +72,6 @@ export default function Episodio() {
     const consultaVideoAfter = async () => {
         const response = await api.get(`/episodios/${after()}`)
         let consultaEpisodio = response.data.response
-        let keyEpisodio = response.data.response.keyEpisodio
         //Coloco aqui os métodos pois são carregadas as informações e já setar na inicialização do componente
         //assim ficando mais fácil de manipular os dados pois o consultaVideo está no componentdidMount
         setEpisodio(consultaEpisodio)
@@ -126,6 +122,27 @@ export default function Episodio() {
         )
     }
 
+    const blob = () => {
+        /*
+        var xhr = new XMLHttpRequest();
+        const load = document.getElementById("load")
+
+        xhr.open("GET", "https://ns570902.ip-51-161-15.net/Uploads/Animes/O/one-punch-man/06.mp4")
+        xhr.responseType = "blob"
+        var blob = new Blob([xhr.response])
+        var url = URL.createObjectURL(blob)
+        xhr.send()
+        return url;
+        */
+        let urlAux = new URL('https://ns570902.ip-51-161-15.net/Uploads/Animes/O/one-punch-man/06.mp4')
+        var blob = new Blob([{ urlAux }], { type: "video/mp4" })
+        let url = URL.createObjectURL(blob)
+
+        console.log(url)
+        return url
+
+    }
+
     return (
         <center>
             <div className="anime">
@@ -143,7 +160,8 @@ export default function Episodio() {
                         // Disable right click
                         onContextMenu={e => e.preventDefault()}
                         // Your props
-                        url={episodio.urlVideo}
+                        //url={episodio.urlVideo}
+                        url={blob()}
                         className="react-player"
                         controls
                         width="100%"
@@ -151,7 +169,7 @@ export default function Episodio() {
                         type="video/mp4"
                     />
                 </div>
-
+                {}
                 <div className="arrows">
                     <Link to={"/episodio/" + after()}>
                         {retornaButtonLeft()}

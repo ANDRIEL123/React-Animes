@@ -7,7 +7,7 @@ import './sugerir.css'
 const Sugerir = () => {
     return (
         <center>
-            <h3 style={{ color: "rgb(70, 201, 253)", display: "block" }}>Sugestões:</h3>
+            <h3 style={{ color: "rgb(70, 201, 253)" }}>Sugestões</h3>
             <div className="sugerir-animes">
                 <form className="form-pedido" method="get" action="mailto:animes@reactanimes.com.br">
                     <div className="txt-nome"><TextField label="Seu nome" /></div>
